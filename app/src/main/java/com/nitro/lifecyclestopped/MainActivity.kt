@@ -3,13 +3,20 @@ package com.nitro.lifecyclestopped
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Place
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.compose.ui.unit.sp
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
@@ -66,11 +73,21 @@ fun Bottom(currentRoute: String?, onNavigateRoute: (String) -> Unit) {
 fun Graph(navController: NavHostController) {
     NavHost(navController = navController, "home") {
         composable("home") {
-            Text("home")
+            Box(
+                Modifier
+                    .fillMaxSize()
+                    .background(Color.Blue)) {
+                Text("home", fontSize = 100.sp, modifier = Modifier.align(Alignment.Center))
+            }
         }
         composable("map") {
             LogLifecycle()
-            Text("map")
+            Box(
+                Modifier
+                    .fillMaxSize()
+                    .background(Color.Red)) {
+                Text("map", fontSize = 100.sp, modifier = Modifier.align(Alignment.Center))
+            }
         }
     }
 }

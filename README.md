@@ -86,4 +86,8 @@ private fun getMapLifecycleObserver(mapView: MapView): LifecycleEventObserver =
 It means that with the same behavior, a MapView on a Bottom destination will stop working after pressing the destination twice or
 going/coming quickly between destinations, as `mapView.onStop()` will be called but `mapView.onStart()` won't (hence the mapview is frozen
 and never "wake up"). The only solution is for the user to go to another destination, wait for a second, and come back to the previous
-destination. 
+destination.
+
+## Gif
+
+![Gif](https://raw.githubusercontent.com/NitroG42/LifecycleStopped/master/lifecycle.gif)
