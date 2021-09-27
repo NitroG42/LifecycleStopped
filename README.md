@@ -1,5 +1,7 @@
 # Lifecycle issue with Compose and Navigation
 
+[Linked Issue](https://issuetracker.google.com/issues/201273299)
+
 ## Context
 
 Following the sample code, we insert a lifecycle observer :
